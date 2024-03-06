@@ -1,0 +1,59 @@
+<!-- templates/other.html -->
+{% extends 'base.html' %} {% block content %}
+<div class="w3-main" style="margin-left:auto">
+	<div class="w3-row w3-padding-64">
+		<div class="w3-twothird w3-container">
+			<h1 class="w3-text-cyan2">Other</h1>
+			<p>Other stuff here...</p>
+		</div>
+	</div>
+
+        <h1 class="h1Table">vSphere Hosts Information</h1>
+        <table id="hostTable" class="display">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Connection State</th>
+                    <th>Power State</th>
+                    <th>Number of CPUs</th>
+                    <th>Memory Usage (GB)</th>
+                    <th>Total Memory (GB)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for host in vm_hosts %}
+                    <tr>
+                        <td>{{ host.Name }}</td>
+                        <td id="hostStatus{{ loop.index }}">{{ host.ConnectionState }}</td>
+                        <td id="powerStatus{{ loop.index }}">{{ host.PowerState }}</td>
+                        <td>{{ host.NumCpu }}</td>
+                        <td>{{ host.MemoryUsageGB }}</td>
+                        <td>{{ host.MemoryTotalGB }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Include the DataTables CSS and JS files -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.dataTables.css') }}" />
+    <!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script> -->
+    <script src="{{ url_for('static', filename='js/jquery.dataTables.js') }}"></script>
+
+    <!-- Include the external JavaScript file -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <!-- Include the new datatable-init.js file -->
+    <script src="{{ url_for('static', filename='js/datatable-init.js') }}"></script>
+
+    <!-- Call the function for each row -->
+    <script>
+        {% for host in vm_hosts %}
+            hostConnectionState("{{ host.ConnectionState }}", 'hostStatus{{ loop.index }}');
+            PowerState("{{ host.PowerState }}", 'powerStatus{{ loop.index }}');
+        {% endfor %}
+    </script>
+
+{% endblock %}
+
+

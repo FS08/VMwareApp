@@ -1,0 +1,203 @@
+/* sytles.css */
+ html,body,h1,h2,h3,h4,h5,h6 {
+     font-family: "Roboto", sans-serif;
+}
+
+/* Change the background color of the body */
+ body {
+     background-color: darkgray;
+     background-image: url("app/static/image/grey_background.png");
+     background-attachment: fixed;
+     background-size: cover;
+     background-position: center;
+    /* Example color */
+}
+ .w3-main-mine {
+     flex: 1;
+     padding: 20px; /* Adjust the padding as needed */
+     margin-left: auto;
+     margin-right: auto;
+}
+
+#myFooter {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px; /* Adjust the top and bottom padding to change the overall height */
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    font-size: 10px; /* Change the font size of the text inside the footer */
+    flex-shrink: 0; /* Prevent the footer from shrinking */
+    left: 0;
+    margin: 0; /* Remove any default margins */
+    z-index: 100;
+}
+
+.h1Table {
+    text-align: center;
+}
+
+.h1PageTitle {
+    text-align: center;
+}
+
+/* Tables formater */
+table, th, td {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 200px;
+    text-align: center;
+    padding: 20px;
+    border: 5px solid white;
+    border-collapse: collapse;
+    background-color: #cecece;
+}
+
+/* Host Connection State Color  */
+.connection-state-color {
+    /* Add any other styles you want for the connection state text */
+    color: inherit; /* Inherit the color from the parent element */
+}
+
+/* Define background colors for different power states */
+.power-state-color.powered-on {
+    background-color: green;
+}
+
+.power-state-color.powered-off {
+    background-color: red;
+}
+
+/* VM Overall Status Background Color */
+.success-status {
+    background-color: green;
+}
+
+.warning-status {
+    background-color: yellow;
+}
+
+.failure-status {
+    background-color: red;
+}
+
+.dataTables_wrapper{
+    margin-bottom: 150px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.button {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+    margin: 0;
+  position: absolute;
+  top: 22%;
+  left: 24%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.buttonShutDown {
+  background-color: red;
+  color: black;
+  border: 1px solid black;
+    width: auto;
+    margin: 3px;
+}
+
+.buttonStart {
+  background-color: lightgreen;
+  color: black;
+  border: 1px solid black;
+    width: auto;
+    margin: 3px;
+}
+
+.buttonRestart {
+  background-color: yellow;
+  color: black;
+  border: 1px solid black;
+    width: auto;
+    margin: 3px;
+}
+
+.buttonShutDown:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.buttonStart:hover {
+  background-color: mediumseagreen;
+  color: white;
+}
+
+.buttonRestart:hover {
+  background-color: yellowgreen;
+  color: white;
+}
+
+/* LOG IN PAGE */
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #26a1b1;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #375e64;
+}
+
+.loginPage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    width: 450px;
+}

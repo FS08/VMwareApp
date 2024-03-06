@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% block head %}
+		<title>{% block title %}{% endblock %}VMWare App</title>
+            <link rel="shortcut icon" href="{{ url_for('static', filename='image/kudelski_logo.ico') }}">
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<!-- Link to external CSS file -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+		<!-- CSS links -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}" />
+		<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+		{% endblock %}
+	</head>
+	<body class="body_background">
+        <img src="../static/image/Kudelski_Group-removebg-preview.png" alt="Kudelski Group" class="loginPage">
+		<div class="login-page">
+        <div class="form">
+            <form class="login-form" method="post">
+                <input type="text" name="username" placeholder="username"/>
+                <input type="password" name="password" placeholder="password"/>
+                <button type="submit">login</button>
+                {% if error %}
+                <p>{{ error }}</p>
+                {% endif %}
+            </form>
+        </div>
+        </div>
+
+		<div class="w3-main">
+
+			<footer id="myFooter">
+				<div class="w3-container w3-theme-l2 w3-padding-2">
+					<!-- This element will display the date and time -->
+				</div>
+
+				<div class="w3-container w3-theme-l1">
+					<p>Powered by <a href="https://www.nagra.com/" target="_blank">Kudelski</a></p>
+				</div>
+			</footer>
+		</div>
+
+		<!-- Link to external JavaScript file -->
+		<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+	</body>
+</html>

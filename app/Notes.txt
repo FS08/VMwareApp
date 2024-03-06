@@ -1,0 +1,47 @@
+Second Parser
+
+for object in root.findall('Object'):
+    name = object.attrib
+    for key, value in name.items():
+        vm_object = value
+        print ("Object Type:", vm_object)
+
+        for property in object:
+            vm = property.attrib
+            for key, value in vm.items():
+                vm_name = value
+                print (vm_name)
+
+---------------------------------------------------------------
+First Parser
+
+def parse_xml_data():
+    tree = ET.parse("C:\\vSphereData\\vSphere_Data.xml")
+    root = tree.getroot()
+
+    vm_hosts = []
+    for host in root:
+        host_info = {
+            'Name': host.find('Name'),
+            'ConnectionState': host.find('ConnectionState'),
+            'PowerState': host.find('PowerState'),
+            'NumCPU': host.find('NumCPU'),
+            'MemoryUsageGB': host.find('MemoryUsageGB'),
+            'MemoryTotalGB': host.find('MemoryTotalGB')
+        }
+        print (host_info)
+        vm_hosts.append(host_info)
+
+    return vm_hosts
+
+---------------------------------------------------------------
+base.html -- Pagination --
+<!-- Pagination -->
+			<div class="w3-center w3-padding-2">
+				<div class="w3-bar">
+					<a class="w3-button w3-black" href="#">1</a>
+					<a class="w3-button w3-hover-black" href="#">2</a>
+					<a class="w3-button w3-hover-black" href="#">3</a>
+					<a class="w3-button w3-hover-black" href="#">»</a>
+				</div>
+			</div>

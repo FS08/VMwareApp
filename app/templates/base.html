@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% block head %}
+		<title>{% block title %}{% endblock %}VMWare App</title>
+            <link rel="shortcut icon" href="{{ url_for('static', filename='image/kudelski_logo.ico') }}">
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<!-- Link to external CSS file -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+		<!-- CSS links -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}" />
+		<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+		{% endblock %}
+	</head>
+	<body class="body_background">
+		<div id="content">{% block content %}{% endblock %}</div>
+		<!-- Navbar -->
+		<div class="w3-top">
+			<div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+				<a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="/" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+				<a href="/home" class="w3-bar-item w3-button w3-theme-l1">Core Tech</a>
+                <div class="w3-bar-item w3-right">
+                    {% if current_user.is_authenticated %}
+                        <a href="/logout" class="w3-button w3-hover-white" style="font-weight: bold">Logout</a>
+                    {% endif %}
+                </div>
+				<a href="/host" class="w3-bar-item w3-button w3-hide-small w3-hover-white" id="hostLink">Host</a>
+				<a href="/vm" class="w3-bar-item w3-button w3-hide-small w3-hover-white" id="vmLink">VM</a>
+                <a href="/about" class="w3-bar-item w3-button w3-hide-small w3-hover-white" id="aboutLink">About</a>
+				<a href="/other" class="w3-bar-item w3-button w3-hide-small w3-hover-white" id="otherLink">Other</a>
+			</div>
+		</div>
+
+		<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+		<div class="w3-main">
+
+			<footer id="myFooter">
+				<div class="w3-container w3-theme-l2 w3-padding-2">
+					<!-- This element will display the date and time -->
+				</div>
+
+				<div class="w3-container w3-theme-l1">
+					<p>Powered by <a href="https://www.nagra.com/" target="_blank">Kudelski</a></p>
+				</div>
+			</footer>
+
+			<!-- END MAIN -->
+		</div>
+
+		<!-- Link to external JavaScript file -->
+		<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+	</body>
+</html>
