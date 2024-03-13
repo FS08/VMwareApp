@@ -6,7 +6,7 @@
 /* Change the background color of the body */
  body {
      background-color: darkgray;
-     background-image: url("app/static/image/grey_background.png");
+     /* background-image: url("app/static/image/grey_background.png"); */
      background-attachment: fixed;
      background-size: cover;
      background-position: center;
@@ -200,4 +200,29 @@ table, th, td {
     margin-right: auto;
     margin-top: 5%;
     width: 450px;
+}
+
+.grid-item1 {grid-area: header;}
+.grid-item2 {grid-area: main;}
+.grid-item3 {grid-area: right;}
+.grid-item4 {grid-area: host;}
+.grid-item5 {grid-area: vm;}
+.grid-item6 {grid-area: about;}
+.grid-item7 {grid-area: other;}
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'header header header'
+        'main main main right'
+        'host host host host'
+        'vm vm vm vm vm vm'
+        'about about about'
+        'other other other';
+    gap: 1px;
+    padding: 5px;
+}
+
+.grid-container > div {
+    text-align: center;
+    padding: 20px;
 }

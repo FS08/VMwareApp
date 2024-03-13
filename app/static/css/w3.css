@@ -142,7 +142,8 @@ textarea{
  html,body{
     font-family:Verdana,sans-serif;
     font-size:15px;
-    line-height:1.5
+    line-height:1.5;
+
 }
 html{
     overflow-x:hidden
@@ -449,7 +450,7 @@ a{
  .w3-container:after,.w3-container:before,.w3-panel:after,.w3-panel:before,.w3-row:after,.w3-row:before,.w3-row-padding:after,.w3-row-padding:before, .w3-cell-row:before,.w3-cell-row:after,.w3-clear:after,.w3-clear:before,.w3-bar:before,.w3-bar:after{
     content:"";
     display:table;
-    clear:both
+    clear:both;
 }
  .w3-col,.w3-half,.w3-third,.w3-twothird,.w3-threequarter,.w3-quarter{
      margin: 0 auto; /* Center the element horizontally */
@@ -670,7 +671,7 @@ a{
     }
     .w3-main{
         margin-left:0!important;
-        margin-right:0!important
+        margin-right:0!important;
     }
     .w3-auto{
         max-width:100%
